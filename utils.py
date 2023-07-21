@@ -28,6 +28,6 @@ def has_changes_for_hour(futures_history: list[float]) -> dict:
     :return: changes during past hour
     """
     result = dict()
-    result["change"] = sum(futures_history)
+    result["change"] = round(sum(futures_history), 1)
     result["status"] = result["change"] >= percent_change
     return result
